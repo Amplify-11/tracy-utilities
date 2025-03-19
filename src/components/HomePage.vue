@@ -6,7 +6,7 @@ const router = useRouter();
 
 function startNewTranscript() {
   const id = Date.now().toString();
-  router.push(`/transcript/${id}`);
+  router.push({name: 'transcript', params: {id}});
 }
 </script>
 

@@ -440,7 +440,7 @@ const segmentsContainer = ref<HTMLDivElement | null>(null)
         </button>
         <button
 			v-if="!isActiveRecording"
-          @click="showShare || error ? router.push('/') : finishRecording()"
+          @click="showShare || error ? router.push({name: 'home'}) : finishRecording()"
           class="control-button done"
         >
           Done

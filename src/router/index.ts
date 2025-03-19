@@ -5,13 +5,17 @@ import TranscriptDetailPage from '../components/TranscriptDetailPage.vue';
 const router = createRouter({
   history: createWebHistory(),
   routes: [
+	{
+		path: '/',
+		redirect: '/tracy-utilities'
+	},
     {
-      path: '/',
+      path: '/tracy-utilities',
       name: 'home',
       component: HomePage
     },
     {
-      path: '/transcript/:id',
+      path: '/tracy-utilities/transcript/:id',
       name: 'transcript',
       component: TranscriptDetailPage
     }

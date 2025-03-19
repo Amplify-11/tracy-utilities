@@ -1,0 +1,28 @@
+{
+  "name": "workspace",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "ngrok": "ngrok http http://localhost:4000",
+    "build": "npx vite build",
+    "start": "npx vite --port=4000"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@vitejs/plugin-vue": "^5.2.1",
+    "express": "^4.21.2",
+    "http-proxy-middleware": "^3.0.3",
+    "pinia": "^3.0.1",
+    "pinia-plugin-persistedstate": "^4.2.0",
+    "typescript": "^5.8.2",
+    "vite": "^6.2.1",
+    "vue": "^3.5.13",
+    "vue-router": "^4.5.0"
+  },
+  "devDependencies": {
+    "vite-plugin-singlefile": "^2.2.0"
+  }
+}

@@ -18,7 +18,7 @@ const formattedDuration = computed(() => {
 </script>
 
 <template>
-  <router-link :to="`/transcript/${transcript.id}`" class="transcript-item">
+  <router-link :to="{name: 'transcript', params: {id: transcript.id}}" class="transcript-item">
     <div class="transcript-info">
       <h3>{{ transcript.title }}</h3>
     	<div class="transcript-meta">

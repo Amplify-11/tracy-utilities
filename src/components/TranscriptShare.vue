@@ -1,6 +1,12 @@
 <script setup lang="ts">
 import { ref, computed, watch} from 'vue';
 import type { Transcript } from '../types';
+const props = defineProps<{
+  transcript: Transcript;
+}>();
+const error = ref('');
+const success = ref('');
+
 
 interface ZapierResponse {
 	attempt: string
@@ -15,25 +21,33 @@ interface Action {
 	data?: Record<string, unknown>
 }
 
-const props = defineProps<{
-  transcript: Transcript;
-}>();
-const error = ref('');
-const success = ref('');
-
-
 const userSettings = {
-	email: 'jeff@jeffjassky.com',
-	zapierUserId: '3611272',
-	emailZapId: '2le1gd1',
-	sheetZapId: '2le55iv',
+	email: 't@amplify11.com',
+	zapierUserId: '8902810',
+	emailZapId: '2e8v0gj',
+	sheetZapId: '2ezysyr',
 	sheets: [
 		{
-			title: 'PW Sheet',
-			sheetId: '1Npqu2taeaCP170cUuTQBZCXF4HY2OazYwsPuriAyQ1c'
+			title: 'Dealers Sheet',
+			sheetId: '13ANCOE1r4vQnTt0LqPqqYuDjqtq1LzuNzfbcQ3kEdVI',
+			worksheetId: '31283979'
 		}
 	]
 }
+
+// const userSettings = {
+// 	email: 'jeff@jeffjassky.com',
+// 	zapierUserId: '3611272',
+// 	emailZapId: '2le1gd1',
+// 	sheetZapId: '2le55iv',
+// 	sheets: [
+// 		{
+// 			title: 'PW Sheet',
+// 			sheetId: '1Npqu2taeaCP170cUuTQBZCXF4HY2OazYwsPuriAyQ1c'
+// 		}
+// 	]
+// }
+
 const email = ref(userSettings.email);
 
 const actions = computed<Action[]>(() => {
@@ -49,7 +63,7 @@ const actions = computed<Action[]>(() => {
 			zapId: userSettings.sheetZapId,
 			title: sheet.title,
 			data: {
-				sheet: sheet.sheetId
+				sheet
 			}
 		}))
 	]
